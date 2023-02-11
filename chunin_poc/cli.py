@@ -2,9 +2,9 @@ from pathlib import Path
 from typing import Optional
 
 import typer
-from common.config import Config
-from common.utils import prepare_tables
-from tools import tools
+from .common.config import Config
+from .common.utils import prepare_tables
+from .tools import tools
 
 app = typer.Typer()
 

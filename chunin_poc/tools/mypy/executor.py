@@ -1,8 +1,8 @@
 __all__ = ["MyPyExecutor"]
-from abstract.executor import ToolExecutor
-from tools.mypy.configurator import MyPyConfigurator
-from tools.mypy.result_manager import MyPyResultManager
-from tools.mypy.runner import MyPyRunner
+from chunin_poc.abstract.executor import ToolExecutor
+from .configurator import MyPyConfigurator
+from .result_manager import MyPyResultManager
+from .runner import MyPyRunner
 
 
 class MyPyExecutor(ToolExecutor):

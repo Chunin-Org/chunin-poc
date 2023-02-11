@@ -1,4 +1,4 @@
-from common.types import ConfigDict
+from chunin_poc.common.types import ConfigDict
 
 from .google import profile as google_profile
 

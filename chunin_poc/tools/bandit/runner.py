@@ -1,5 +1,5 @@
 __all__ = ["BanditRunner"]
-from abstract.runner import ToolRunner
+from chunin_poc.abstract.runner import ToolRunner
 from bandit.core.manager import BanditManager
 
 

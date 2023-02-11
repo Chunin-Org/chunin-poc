@@ -1,5 +1,5 @@
 __all__ = ["BanditConfigurator"]
-from abstract.configurator import ToolConfigurator
+from chunin_poc.abstract.configurator import ToolConfigurator
 from bandit.core.config import BanditConfig
 
 

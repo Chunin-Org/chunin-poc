@@ -3,7 +3,7 @@ from abc import ABC
 from pathlib import Path
 from typing import Literal, Type
 
-from common.types import BanditConfig, Flake8Config, MyPyConfig
+from chunin_poc.common.types import BanditConfig, Flake8Config, MyPyConfig
 
 from .configurator import ToolConfigurator
 from .result_manager import ToolResultManager

@@ -1,7 +1,7 @@
 __all__ = ["Flake8ResultManager"]
 from pathlib import Path
 
-from abstract.result_manager import ToolResultManager
+from chunin_poc.abstract.result_manager import ToolResultManager
 
 
 class Flake8ResultManager(ToolResultManager):

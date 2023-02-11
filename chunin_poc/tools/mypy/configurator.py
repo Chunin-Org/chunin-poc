@@ -1,5 +1,5 @@
 __all__ = ["MyPyConfigurator"]
-from abstract.configurator import ArgvToolConfigurator
+from chunin_poc.abstract.configurator import ArgvToolConfigurator
 
 
 class MyPyConfigurator(ArgvToolConfigurator):

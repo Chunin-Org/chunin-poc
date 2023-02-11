@@ -1,7 +1,7 @@
 __all__ = ["BanditResultManager"]
 from pathlib import Path
 
-from abstract.result_manager import ToolResultManager
+from chunin_poc.abstract.result_manager import ToolResultManager
 from bandit import __version__
 
 

@@ -7,7 +7,7 @@ from base64 import urlsafe_b64encode
 from hashlib import sha1
 from pathlib import Path
 
-from common.types import ConfigDict
+from .types import ConfigDict
 
 
 def prepare_tables(checks_root: Path, config: ConfigDict):

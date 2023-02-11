@@ -1,5 +1,5 @@
 __all__ = ["Flake8Executor"]
-from abstract.executor import ToolExecutor
+from chunin_poc.abstract.executor import ToolExecutor
 
 from .configurator import Flake8Configurator
 from .result_manager import Flake8ResultManager

@@ -1,5 +1,5 @@
 __all__ = ["MyPyRunner"]
-from abstract.runner import ToolRunner
+from chunin_poc.abstract.runner import ToolRunner
 from mypy import api
 
 

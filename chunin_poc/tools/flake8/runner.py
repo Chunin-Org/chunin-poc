@@ -1,5 +1,5 @@
 __all__ = ["Flake8Runner"]
-from abstract.runner import ToolRunner
+from chunin_poc.abstract.runner import ToolRunner
 from flake8.main import application
 
 

@@ -1,7 +1,7 @@
 __all__ = ["MyPyResultManager"]
 import re
 
-from abstract.result_manager import ToolResultManager
+from chunin_poc.abstract.result_manager import ToolResultManager
 from mypy.version import __version__
 
 

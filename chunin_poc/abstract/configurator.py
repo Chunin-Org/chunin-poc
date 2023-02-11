@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 from pathlib import Path
 from typing import Any, Generator
 
-from common.types import BanditConfig, Flake8Config, MyPyConfig
+from chunin_poc.common.types import BanditConfig, Flake8Config, MyPyConfig
 
 
 class ToolConfigurator(ABC):

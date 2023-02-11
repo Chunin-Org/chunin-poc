@@ -1,5 +1,5 @@
 __all__ = ["BanditExecutor"]
-from abstract.executor import ToolExecutor
+from chunin_poc.abstract.executor import ToolExecutor
 
 from .configuratot import BanditConfigurator
 from .result_manager import BanditResultManager

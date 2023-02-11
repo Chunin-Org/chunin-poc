@@ -1,5 +1,5 @@
 __all__ = ["Flake8Configurator"]
-from abstract.configurator import ArgvToolConfigurator
+from chunin_poc.abstract.configurator import ArgvToolConfigurator
 
 
 class Flake8Configurator(ArgvToolConfigurator):

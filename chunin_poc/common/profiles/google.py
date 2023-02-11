@@ -1,6 +1,6 @@
 __all__ = ["profile"]
 
-from common.types import ConfigDict
+from chunin_poc.common.types import ConfigDict
 
 profile: ConfigDict = {
     "max_line_length": 88,
