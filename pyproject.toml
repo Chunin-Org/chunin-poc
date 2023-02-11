@@ -1,0 +1,55 @@
+[tool.poetry]
+name = "chunin-poc"
+version = "0.0.0"
+description = "Checks Union Proof Of Concept"
+license = "MIT"
+authors = ["Oleh Mazur <oleh@four-velocity.com>"]
+readme = "README.md"
+homepage = "https://github.com/Chunin-Org/chunin-poc"
+repository = "https://github.com/Chunin-Org/chunin-poc"
+documentation = "https://github.com/Chunin-Org/chunin.py/wiki"
+keywords = ["linter", "quality"]
+
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Bug Tracking",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Utilities",
+    "Typing :: Typed"
+]
+
+
+[tool.poetry.dependencies]
+python = "^3.10"
+typer = {extras = ["all"], version = "^0.7.0"}
+toml = "^0.10.2"
+typing-extensions = "^4.4.0"
+flake8 = "^6.0.0"
+mypy = "^1.0.0"
+bandit = "^1.7.4"
+
+[tool.poetry.dev-dependencies]
+black = "^23.1.0"
+isort = "^5.12.0"
+
+[tool.poetry.scripts]
+chunin = "chunin_poc.__main__:app"
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
