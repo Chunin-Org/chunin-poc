@@ -14,17 +14,17 @@ class BanditConfigurator(ToolConfigurator):
                 self.config.get("ignore", []) + self.config.get("extend_ignore", [])
             ),
         }
+        exclude_dirs = ["*/" + glob for glob in self.config.get("exclude", [])]
+        extend_exclude_dirs = ["*/" + glob for glob in self.config.get("extend_exclude", [])]
         conf_dict = {
             "plugin_name_pattern": "*.py",
             "include": include if include else ["*.py"],
+            "exclude_dirs": exclude_dirs + extend_exclude_dirs,
         }
         config = BanditConfig()
         config._config = conf_dict
         return {
             "config": config,
             "target": [str(self.root)],
-            "exclude": ",".join(
-                self.config.get("exclude", []) + self.config.get("extend_exclude", [])
-            ),
             "profile": profile if any(profile.values()) else None,
         }

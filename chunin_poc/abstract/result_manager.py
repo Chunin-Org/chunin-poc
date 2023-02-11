@@ -24,13 +24,15 @@ class ToolResultManager(ABC):
         self.cx = sqlite3.connect(root / ".chunin")
         self.cu = self.cx.cursor()
 
-    def save(self, results: Any) -> None:
-        for result in self._extract_results(results):
+    def save(self, raw_results: Any) -> list[Result]:
+        results = list(self._extract_results(raw_results))
+        for result in results:
             table_name = self._get_table_name(str(result["file_name"]))
             values = self._extract_values(result)
             self._insert_values(table_name, values)
         self.cx.commit()
         self.cx.close()
+        return results
 
     @abstractmethod
     def _extract_results(self, results: Any) -> Generator[Result, None, None]:
@@ -51,8 +53,11 @@ class ToolResultManager(ABC):
         )
 
     def _get_table_name(self, file_path: str) -> str:
+        file_path = Path(file_path)
+        if not file_path.is_absolute():
+            file_path = file_path.absolute()
         r = self.cu.execute(
-            f"SELECT table_name FROM files WHERE abspath=?", (file_path,)
+            f"SELECT table_name FROM files WHERE abspath=?", (str(file_path),)
         )
         return r.fetchone()[0]
 

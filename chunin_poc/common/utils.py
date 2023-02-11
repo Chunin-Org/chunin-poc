@@ -56,7 +56,7 @@ def prepare_tables(checks_root: Path, config: ConfigDict):
     ]
 
     for child in checks_root.rglob("*"):
-        if child.suffix == ".py" and child not in excluded:
+        if child.suffix == ".py" and all(x not in child.parents for x in excluded):
             rel_path = child.relative_to(checks_root)
             name_hash = _get_hash_from_string(str(rel_path))
             table_name = f"file_{name_hash}_{str(rel_path).replace('/','')}".replace(

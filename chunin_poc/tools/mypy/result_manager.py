@@ -9,7 +9,7 @@ class MyPyResultManager(ToolResultManager):
     regex_pattern = re.compile(
         r"(?P<file_name>[a-zA-Z0-9_\./]+):(?P<row_start>\d+):(?P<col_start>\d+): (?P<description>.+) \[(?P<error>[\w-]+)\]"
     )
-    link_pattern = "https://mypy.readthedocs.io/en/{version}/{page}.html#{error}"
+    link_pattern = "https://mypy.readthedocs.io/en/{}/{}.html#{}"
 
     _optional_link = {
         "type-arg",
@@ -47,6 +47,4 @@ class MyPyResultManager(ToolResultManager):
             page = "error_code_list"
         else:
             page = "error_code_list2"
-        return self.link_pattern.format(
-            {"version": __version__, "page": page, "error": error}
-        )
+        return self.link_pattern.format(__version__, page, error)

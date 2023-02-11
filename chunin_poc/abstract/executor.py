@@ -6,7 +6,7 @@ from typing import Literal, Type
 from chunin_poc.common.types import BanditConfig, Flake8Config, MyPyConfig
 
 from .configurator import ToolConfigurator
-from .result_manager import ToolResultManager
+from .result_manager import ToolResultManager, Result
 from .runner import ToolRunner
 
 
@@ -22,7 +22,8 @@ class ToolExecutor(ABC):
         self.result_manager = self._result_manager(root, self._tool)
         self.root = root
 
-    def execute(self):
+    def execute(self) -> tuple[int, bool, list[Result]]:
         tool_config = self.configurator.convert()
         results = self.runner.run(tool_config)
-        self.result_manager.save(results)
+        final = self.result_manager.save(results)
+        return len(final), not bool(final), final

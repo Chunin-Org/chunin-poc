@@ -40,7 +40,7 @@ class ArgvToolConfigurator(ToolConfigurator, ABC):
             elif isinstance(value, list):
                 yield from self._convert_list(arg_key, value)
             else:
-                yield from (arg_key, value)
+                yield from (arg_key, str(value))
 
     def _concat_extend(self):
         for key in tuple(self.config.keys()):
