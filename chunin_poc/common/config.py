@@ -2,7 +2,7 @@ __all__ = ["Config"]
 from pathlib import Path
 
 import toml
-from tools import tools
+from chunin_poc.tools import tools
 
 from .profiles import profiles
 from .types import ConfigDict
